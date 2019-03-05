@@ -1,2 +1,2 @@
-#PURRANYA DB
+# PURRANYA DB
 skrypty tworzące baze danych do prjektu purranya
