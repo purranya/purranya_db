@@ -17,7 +17,7 @@ CREATE TABLE Label (
     "color_r" smallint CHECK("color_r">=0 and "color_r"<256) NOT NULL,
     "color_b" smallint CHECK("color_b">=0 and "color_b"<256) NOT NULL,
     "color_g" smallint CHECK("color_g">=0 and "color_g"<256) NOT NULL,
-    "appuser_id" bigint NOT NULL REFERENCES Appuser("id")
+    "calendar_id" bigint NOT NULL REFERENCES Calendar("id")
 );
 
 CREATE TABLE Event (
@@ -26,9 +26,8 @@ CREATE TABLE Event (
     "comment" varchar(255) CHECK(length("comment")>0 and length("comment")<256),
     "start_date" timestamp NOT NULL,
     "end_date" timestamp NOT NULL,
-    "is_archived" boolean NOT NULL,
     "calendar_id" bigint NOT NULL REFERENCES Calendar("id"),
-    "label_id" bigint NOT NULL REFERENCES Label("id")
+    "label_id" bigint REFERENCES Label("id")
 );
 
 CREATE TABLE Note (
