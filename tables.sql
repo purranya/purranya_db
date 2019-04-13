@@ -1,7 +1,7 @@
 CREATE TABLE Appuser (
     "id" bigserial PRIMARY KEY,
     "username" varchar(50) CHECK(length("username")>1 and length("username")<51) NOT NULL UNIQUE,
-    "password" varchar(70) CHECK(length("password")>1 and length("password")<71) NOT NULL UNIQUE  
+    "password" varchar(70) CHECK(length("password")>1 and length("password")<71) NOT NULL  
 );
 
 CREATE TABLE Calendar (
